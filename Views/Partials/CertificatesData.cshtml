@@ -1,0 +1,27 @@
+@inherits UmbracoViewPage<ICertificates>
+
+<!-- Certificates Section-->
+<section class="page-section bg-primary text-white mb-0" id="about">
+    <div class="container">
+        <!-- Certificates Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-white">@Model.MainTitle</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- About Section Content-->
+        <div class="row">
+            <div class="col-lg-4 ms-auto"><p class="lead">@Model.AboutCertificates</p></div>
+            <div class="col-lg-4 me-auto"><p class="lead">@Model.AboutEducation</p></div>
+        </div>
+        <!-- Certificates Section Button-->
+        <div class="text-center mt-4">
+            <a class="btn btn-xl btn-outline-light" href="@Model?.Link?.Url" target="@Model?.Link?.Target">
+                <i class="fas fa-door-open"></i>
+                @Model?.ButtonTitle
+            </a>
+        </div>
+    </div>
+</section>

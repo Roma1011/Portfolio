@@ -1,0 +1,33 @@
+@inherits UmbracoViewPage
+@{
+    var hompage=Model.AncestorOrSelf<HomePage>();
+}
+<!-- Footer-->
+<footer class="footer text-center">
+    <div class="container">
+        <div class="row">
+            <!-- Footer Location-->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <h4 class="text-uppercase mb-4">@hompage?.LocationTitle</h4>
+                <p class="lead mb-0">
+                    @hompage?.LocationSubtitle
+                </p>
+            </div>
+            <!-- Footer Social Icons-->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <h4 class="text-uppercase mb-4">Around the Web</h4>
+                @if(hompage.FooterSocialLinks!=null)
+                {
+                    foreach(var item in hompage.FooterSocialLinks)
+                    {
+                         <a class="btn btn-outline-light btn-social mx-1" href="@item.Url"><i class="fab fa-@item.Network fa-facebook-f"></i></a>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Copyright Section-->
+<div class="copyright py-4 text-center text-white">
+    <div class="container"><small>&copy; @Umbraco.GetDictionaryValue("Footer.CopyrightTitle") @DateTime.Now.Year</small></div>
+</div>
